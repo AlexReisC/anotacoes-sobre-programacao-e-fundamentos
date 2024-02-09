@@ -13,8 +13,8 @@ Decidi organiar as anotações em pastas divididas por tópico ou conceito.
 :file_folder: internet: como funciona a internet, protocolo http e etc
 <br>
 :file_folder: java: pilares da OO, JVM e conceitos importantes do Java
-<br>
-Ainda vou adicionar outros conteúdos e terminar os que ainda vou começar obviamente, tais como Spring Boot, Banco de Dados relacionas e não relacionais, Microsserviços e Monolito etc.
+<br><br>
+Ainda vou adicionar outros conteúdos e terminar os que não comecei obviamente, conteúdos como Spring Boot, Banco de Dados relacionas e não relacionais, Microsserviços e Monolito e são coisas que pretendo estudar e adicionar aqui.
 
 ## Indice dos conteúdos
 :file_folder: java
