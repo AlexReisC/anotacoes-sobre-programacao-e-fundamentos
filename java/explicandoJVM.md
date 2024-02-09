@@ -10,7 +10,7 @@ Quando nos compilamos um arquivo **.java**, arquivos **.class** (que contém o b
 <br>
 Componentes da JVM:
 - Class Loader (Carregador de Classe)
-- Run Time Data Area/JVM Memory (Areas de dados de tempo de execução)
+- Run Time Data Area / JVM Memory (Areas de dados de tempo de execução)
 - Execution Engine (Motor de Execução)
 - Native Interfaces (Interfaces Nativas)
 - Native Libraries (Bibliotecas Nativas)
@@ -45,19 +45,36 @@ Há três tipos de Classes Loaders:
 - Extension Class Loader: Este é o class loader filho do Bootstrap Class Loader e pai do System Class Loader. Ele carrega o arquivo **jar** localizado dentro do diretório **JAVA_HOME/jre/lib/ext**.
 - System/Application Class Loader: Filho do Extension Class Loader. Isto carega as classes para o **classpath**. Por padrão, o **classpath** está definido com o diretorio atual, mas você consegue trocar usando "-cp" ou "-classpath".
 
-## Run Time Data Area/JVM Memory
+## Run Time Data Area / JVM Memory
 
 ### Method Area
+No method area, todas as informações em nivel de classe como nome, nome do pai, métodos e informações de variavéis etc, são armazenadas, incluindo variavéis estáticas. Há apenas um method area por JVM e é um recurso compartilhado.
 
+### Heap
+Heap é o local onde todos os objetos são alocados. Há também uma por JVM e é um recurso compartilhado.
+
+### Stack
+Para toda thread, a JVM cria uma stack em tempo de execução que é armazenada aqui.
+<br> A stack do Java armazena frames. Todo bloco da stack é chamado de stack frame (pilha de quadros) e armazena chamada de métodos. Todas as variavéis locais são armazenadas em seu frame correspondente. 
+<br>Quando uma thread termina sua stack em tempo de execução é destruída pela JVM.
+
+### PC Registers
+Program Counter (Contador de Programa) guarda o endereço da instrução atual de uma thread que está sendo executada. Cada thread tem seu PC.
+
+### Native Method Stack
+Contém todos os métodos nativos usados na aplicação. Para cada thread um native methods é criado.
 
 ## Execution Engine
-
-
+Executa o **.class**. Lê linha por linha do byte-code, usa os dados e informações presentes na memória e executa instruções. Contém:
+- Interpreter (Interpretador): Lê o byte-code e executa a instrução. A desvantagem é que toda vez que um método é chamado multiplas vezes ele é requerido.
+- Compilador Just-in-Time (JIT): Isto é usado par aumentar a perfomance. O JIT compila partes do byte-code que tem funcionalidade similar ao mesmo tempo. Aqui, o termo "compilador" refere-se a um tradutor de instrução definida por uma JVM para instrução definida por uma CPU. O JIT aumenta a eficiência do interpretador, pois ele provê código nativo para que parte da reinterpretação em multiplas chamadas de método, não seja requirida.
+- Garbage Collector (Coletor de lixo): Ele destrói objetos sem referência.
+  
 ## Native Interfaces
-
+Java Native Interface é um framework que provê uma interface para comunicação com outras aplicações escritas em outras linguagens como C e C++. 
 
 ## Native Libraries
-
+Coleção de bibliotecas nativas (C, C++) que são requiridas pelo motor de execução (Engine execution).
 
 ## Referências
 [How JVM Works](https://www.geeksforgeeks.org/jvm-works-jvm-architecture/)
