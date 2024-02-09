@@ -5,6 +5,7 @@ As anotações são feitas em arquivos markdown sem a intensão de serem artigos
 
 ## Organização das pastas
 Decidi organiar as anotações em pastas divididas por tópico ou conceito.
+<br>
 :file_folder: api: conteúdo sobre APIs
 <br>
 :file_folder: designDeSoftwareEArquitetura: principios de design e arquitetura de software
@@ -18,5 +19,11 @@ Ainda vou adicionar outros conteúdos e terminar os que ainda vou começar obvia
 ## Indice dos conteúdos
 :file_folder: java
 <br>
--> [Explicando a JVM](java/explicandoJVM.md)
+-> [Explicando a JVM](java/explicandoJVM.md)<br>
+-> [Diferenças entre as versões do Java](java/diferencasEntreVersoesJava.md)<br>
+-> [Garbage Collector](java/garbageCollector.md)<br>
+-> [Pilares da Orientação a Objetos](java/pilaresDaOrientacaoAObjetos.md)<br>
+-> [Relacionamentos entre classes](java/relacionamentosEmOO.md)<br>
+-> [Collections do Java](java/collectionsJava.md)<br>
 
+:construction: Em construção
