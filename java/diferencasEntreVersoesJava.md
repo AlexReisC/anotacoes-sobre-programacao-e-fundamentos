@@ -41,7 +41,7 @@ Foi lançado em Março de 2014, e trouxe várias novidades, como:
 - Garbage-Collector Interface
   - API para implementar coletores de lixo
 
-## Novidades do Java 11
+## Novidades do Java 11 (LTS)
 
 Foi lançado em Setembro de 2018, e trouxe várias novidades, como:
 - HTTP Client API
@@ -83,9 +83,9 @@ Foi lançado em Setembro de 2018, e trouxe várias novidades, como:
   - `if (obj instanceof String s) { System.out.println(s.length()); }`
 
 
-## Novidades do Java 17
+## Novidades do Java 17 (LTS)
 
-Foi lançado em Setembro de 2021, e trouxe várias novidades, como:
+Foi lançado em Setembro de 2021
 - Sealed Classes
   - Classes que podem ser estendidas por um número limitado de subtipos e que são seladas com a palavra-chave `sealed` e os subtipos com a palavra-chave `permits`
   - `sealed interface Shape permits Circle, Rectangle, Square { }`
@@ -95,8 +95,18 @@ Foi lançado em Setembro de 2021, e trouxe várias novidades, como:
   - Permite que o resultado de uma expressão `switch` seja atribuído a uma variável
   - `int result = switch (day) { case MONDAY, TUESDAY -> 1; case WEDNESDAY -> 2; }`
 
+## Novidades do Java 21 (LTS)
+
+Lançado em Setembro de 2023
+- String templates (Preview)
+- Record Patterns
+- Virtual Threads
+- Unnamed Classes and Instances Main Methods (Preview)
+
 ## Referências
 
 [Java Versions Comparisons and Examples](https://medium.com/nerd-for-tech/java-versions-comparisons-and-examples-233280b9192f)
 <br>
 [Java Versons and Features](https://www.marcobehler.com/guides/a-guide-to-java-versions-and-features#_java_features_8_20)
+<br>
+[Open JDK](https://openjdk.org/projects/jdk/)
