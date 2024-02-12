@@ -5,8 +5,8 @@ Collections Framework é um conjunto de classes e interfaces que implementam est
 - Interfaces: tipos abstratos de dados que representam coleções.
 - Classes: Implementam as interfaces.
 - Algoritmos: Métodos que realizam operações em coleções, como ordenação e busca.
-Existe uma hierarquia de interfaces e classes da Java Collections Framework que são derivadas da interface `Collection` e da interface `Map`.
-<br>
+
+### Existe uma hierarquia de interfaces e classes da Java Collections Framework que são derivadas da interface `Collection` e da interface `Map`.
 - `Collection`
   - `List`
     - `ArrayList`
@@ -44,21 +44,21 @@ Existe uma hierarquia de interfaces e classes da Java Collections Framework que 
 
 ## Classes ou Implementações
 
-`ArrayList` é uma implementação de `List` que utiliza um array para armazenar os elementos, mas o tamanho do array pode ser aumentado dinamicamente. A busca de elementos é rápida, mas a inserção e remoção de elementos podem ser lentas. Recomendada quando precisar de acesso aleatório.
+- `ArrayList` é uma implementação de `List` que utiliza um array para armazenar os elementos, mas o tamanho do array pode ser aumentado dinamicamente. A busca de elementos é rápida, mas a inserção e remoção de elementos podem ser lentas. Recomendada quando precisar de acesso aleatório.
 <br>
-`LinkedList` é uma implementação de `List` que utiliza uma lista duplamente encadeada para armazenar os elementos. A busca de elementos é lenta, mas a inserção e remoção de elementos são rápidas. Recomendada quando precisar de inserção e remoção de elementos.
+- `LinkedList` é uma implementação de `List` que utiliza uma lista duplamente encadeada para armazenar os elementos. A busca de elementos é lenta, mas a inserção e remoção de elementos são rápidas. Recomendada quando precisar de inserção e remoção de elementos.
 <br>
-`HashSet` é uma implementação de `Set` que utiliza uma tabela de dispersão para armazenar os elementos, os objetos são organizados pelo código hash. A busca de elementos é rápida, mas a ordem dos elementos não é garantida. Recomendada quando exigir elementos únicos e não se importar com a ordem.
+- `HashSet` é uma implementação de `Set` que utiliza uma tabela de dispersão para armazenar os elementos, os objetos são organizados pelo código hash. A busca de elementos é rápida, mas a ordem dos elementos não é garantida. Recomendada quando exigir elementos únicos e não se importar com a ordem.
 <br>
-`LinkedHashSet` é uma implementação de `Set` derivada de `HashSet` mas mantém uma lista duplamente encadeada de todos os elementos. Mantém a ordem de inserção. Recomendada quando exigir elementos únicos e se importar com a ordem.
+- `LinkedHashSet` é uma implementação de `Set` derivada de `HashSet` mas mantém uma lista duplamente encadeada de todos os elementos. Mantém a ordem de inserção. Recomendada quando exigir elementos únicos e se importar com a ordem.
 <br>
-`TreeSet` é uma implementação de `SortedSet` que utiliza uma árvore para armazenar os elementos. Os elementos são ordenados de acordo com a ordem natural dos elementos ou de acordo com um `Comparator` fornecido. O acesso é lento. Recomendada quando exigir elementos únicos e com a ordem natural.
+- `TreeSet` é uma implementação de `SortedSet` que utiliza uma árvore para armazenar os elementos. Os elementos são ordenados de acordo com a ordem natural dos elementos ou de acordo com um `Comparator` fornecido. O acesso é lento. Recomendada quando exigir elementos únicos e com a ordem natural.
 <br>
-`HashMap` é uma implementação de `Map` que utiliza uma tabela de dispersão para armazenar os pares chave-valor. A ordem dos elementos não é garantida. Recomendada quando exigir pares chave-valor e não se importar com a ordem.
+- `HashMap` é uma implementação de `Map` que utiliza uma tabela de dispersão para armazenar os pares chave-valor. A ordem dos elementos não é garantida. Recomendada quando exigir pares chave-valor e não se importar com a ordem.
 <br>
-`LinkedHashMap` é uma implementação de `Map` derivada de `HashMap` mas mantém uma lista duplamente encadeada de todos os elementos. A ordem de inserção é mantida. Recomendada quando exigir pares chave-valor e os elementos são iterados na ordem de inserção.
+- `LinkedHashMap` é uma implementação de `Map` derivada de `HashMap` mas mantém uma lista duplamente encadeada de todos os elementos. A ordem de inserção é mantida. Recomendada quando exigir pares chave-valor e os elementos são iterados na ordem de inserção.
 <br>
-`TreeMap` é uma implementação de `SortedMap` que utiliza uma árvore para armazenar os pares chave-valor. Os elementos são ordenados de acordo com a ordem natural das chaves ou de acordo com um `Comparator` fornecido. Recomendada quando exigir pares chave-valor e a ordem natural das chaves. Semelhante ao `TreeSet`.
+- `TreeMap` é uma implementação de `SortedMap` que utiliza uma árvore para armazenar os pares chave-valor. Os elementos são ordenados de acordo com a ordem natural das chaves ou de acordo com um `Comparator` fornecido. Recomendada quando exigir pares chave-valor e a ordem natural das chaves. Semelhante ao `TreeSet`.
 
 ## Complexidade de Tempo
 
