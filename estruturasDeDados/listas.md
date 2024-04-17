@@ -140,7 +140,7 @@ Complexidade O(n).
 ```
     busca-enc(x, pont, ant)
     se pont == null então
-        // alocar memoria
+        // alocar pt
         pt->.info := novo-valor
         pt->.chave := x
         pt->.prox := ant->.prox
@@ -154,7 +154,7 @@ Complexidade O(n).
     se pont != null então
         ant->.prox := pont->.prox
         
-        // desalocar memoria
+        // desalocar pt
     senão "nó não encontrado"
 ```
 Complexidade de ambos é O(n).
@@ -173,9 +173,6 @@ Complexidade de ambos é O(n).
                 ptr := ptr->.prox
 ```
 Complexidade O(n).
-
-**Inserção de um novo nó na lista não ordenada**
-
 
 ## Lista Circular
 

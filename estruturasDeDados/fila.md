@@ -32,4 +32,29 @@ São necessários dois ponteiros: início de fila (*f*) e retaguarda (*r*). Para
 Operações de tempo constante.
 
 ## Alocação Encadeada
+Filas exigem duas variáveis do tipo ponteiro: *inicio*, que aponta para o primeiro nó da lista, e *fim*, que aponta para o último. Na fila vazia, ambos apontam para *nulo*.
 
+**Inserção**
+```
+    // alocar pt
+    pt->.info := novo-valor
+    pt->.prox := nulo
+    se fim != nulo então
+        fim->.prox := pt
+    senão
+        inicio := pt
+    fim := pt
+```
+
+**Remoção**
+```
+    se inicio != nulo então
+        pt := inicio
+        inicio := inicio->.prox
+        se inicio == nulo então
+            fim := nulo
+        valor-recuperado := pt->.info
+        // desalocar pt
+    senão *underflow*
+```
+A complexidade para essas operações é constante, ou seja, O(1).

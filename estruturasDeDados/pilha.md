@@ -22,4 +22,23 @@ Temos um ponteiro chamado *topo* para indicar o topo da pilha,ou seja, o element
 A complexidade das operações é O(1).
 
 ## Alocação Encadeada
+Considerando-se listas simplesmente encadeadas (sem nó-cabeça), o *topo* da pilha é o primeiro nó da lista, apontado por uma variável ponteiro *topo*. Se a pilha estiver vazia então *topo = nulo*.
 
+**Inserção**
+```
+    // alocar pt
+    pt->.info := novo-valor
+    pt->.prox := topo
+    topo := pt
+```
+
+**Remoção**
+```
+    se topo != nulo então
+        pt := topo
+        topo := topo->.prox
+        valor-recuperado := pt->.info
+        // desalocar pt
+    senão *underflow*
+```
+As complexidades dessas operações são constantes, ou seja, O(1).
