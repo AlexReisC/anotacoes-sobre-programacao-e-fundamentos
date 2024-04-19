@@ -20,10 +20,10 @@ De modo geral, uma operação que se deseja realizar no heap está associada a "
 Algoritmo subir() recursivo
 ```
     subir(i)
-        j:=i/2
+        j := i/2
         se j >= 1 então
             se H[j].chave < H[i].chave então
-                torcar H[j] <=> H[i]
+                torcar (H[j], H[i])
                 subir(j)
 ```
 
@@ -31,23 +31,23 @@ Algoritmo subir() iterativo
 
 ```
     subir(i)
-        j:=i/2
+        j := i/2
         enquanto j >= 1 e H[j].chave < H[i].chave
             torcar H[j] <=> H[i]
-            i:=j
-            j:=i/2
+            i := j
+            j := i/2
 ```
 
 Algoritmo descer() recursivo
 ```
     descer(i,n)
-        j:=2*i
+        j := 2*i
         se j <= n então
             se j < n então
                 se H[j].chave < H[j+1].chave então
-                    j:=j+1
+                    j := j+1
             se H[i].chave < H[j].chave então
-                trocar H[i] <=> H[j]
+                trocar (H[i], H[j])
                 descer(j,n)
         
 ```
@@ -55,17 +55,17 @@ Algoritmo descer() recursivo
 Algoritmo descer() iterativo
 ```
     descer(i,n)
-        j:=2*i
+        j := 2*i
         enquanto j <= n faça
             se j < n então
                 se H[j].chave < H[j+1].chave então
-                    j:=j+1
+                    j := j+1
             se H[i].chave < H[j].chave então
-                trocar H[i] <=> H[j]
-                i:=j
-                j:=2*i
+                trocar (H[i], H[j])
+                i := j
+                j := 2*i
             senão
-                j:=n+1
+                j := n+1
 ```
 
 As complexidades dos algoritmos subir() e descer() **recursivos** são as mesmas de percorrer o caminho de uma árvore binária completa: O(log n)
@@ -75,8 +75,8 @@ Suponha a inserção de um novo elemento, a lista agora passará a ter n+1 eleme
 
 ```
     inserir(x)
-        H[n+1]:=x
-        n:=n+1
+        H[n+1] := x
+        n := n+1
         subir(n)
 ```
 Complexidade igual ao algoritmo subir(): O(log n)
@@ -86,8 +86,8 @@ A remoção é feita sempre com o de maior prioridade, logo a sua posição fica
 ```
     remover()
         se n != 0 então
-            H[1]:=H[n]
-            n:=n-1
+            H[1] := H[n]
+            n := n-1
             descer(1, n)
         senão "lista vazia"
 ```
@@ -97,15 +97,16 @@ A complexidade desse algoritmo depende do algoritmo descer(): O(log n)
 Observando que toda lista ordenada corresponde a um heap, podemos construir um através da ordenação de uma lista.
 ```
     construirHeap()
-        para i:=2 até n faça
+        para i := 2 até n faça
             subir(i)
 ```
 Complexidade O(n log n)
 <br>
 Uma solução alternativa é descrita observando que para um nó sem filhos satisfaz as propriedades de heap, isto é, todo nó alocado a partir da posição n/2 + 1. Por essa razão, na construção de um heap os únicos nós relevantes são os internos da árvore. Estes devem ter suas prioridades verificadas e acertadas.
+
 ```
     construirHeapOtimizado()
-        para i:=n/2 até 1 faça
+        para i := n/2 até 1 faça
             descer(i,n)
 ```
 Complexidade linear: O(n)

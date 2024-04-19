@@ -47,7 +47,7 @@ Ambos algoritmos tem complexidade do pior caso O(n). Mas o segundo é mais rápi
         L[n+1] := x; i := 1
         enquanto L[i].chave < x faça
             i := i+1
-        se i == n+1 ou L[i].chava != x então
+        se i == n+1 ou L[i].chave != x então
             busca-ordenada := 0
         senão
             busca-ordenada := i
@@ -101,7 +101,7 @@ As operações de inserção e remoção utilizam a busca, tanto para evitar cha
 Complexidade de ambos é O(n).
 
 ## Alocação encadeada
-Também conhecida por *aloção dinammica* uma vez que as posições de memória são alocadas conforme o necessário. Os nós de uma lista então encontram-se dispersos na memória e são interligados por ponteiros.
+Também conhecida por *aloção dinamica* uma vez que as posições de memória são alocadas conforme o necessário. Os nós de uma lista então encontram-se dispersos na memória e são interligados por ponteiros.
 <br>
 Qualquer estrutura, inclusive listas, que seja armazenada em alocação encadeada requer o uso de um ponteiro que indique o endereço de seu primeiro nó. O percurso de uma lista é feito então a partir desse ponteiro.
 <br>

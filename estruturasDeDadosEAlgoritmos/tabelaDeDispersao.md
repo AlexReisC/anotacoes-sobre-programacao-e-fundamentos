@@ -1,4 +1,4 @@
-# Tabela de Dispersão (Hash)
+# Tabela de Dispersão (Hash Table)
 Problema: distribuir um conjunto de *n* chaves em uma tabela *T* com *m* posições.
 <br>
 As posições da tabela se situam no intervalo de [0, m-1]. Se as chaves tiverem numeração 0, 1, ... , m-1 respectivamente, pode-se utilizar o valor de cada uma como indice na tabela, técnica conhecida como acesso direto.
