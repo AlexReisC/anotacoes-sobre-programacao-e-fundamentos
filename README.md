@@ -17,8 +17,19 @@ Decidi organiar as anotações em pastas divididas por tópico ou conceito.
 Ainda vou adicionar outros conteúdos e terminar os que não comecei obviamente, conteúdos como Spring Boot, Banco de Dados relacionas e não relacionais, Microsserviços e Monolito e são coisas que pretendo estudar e adicionar aqui.
 
 ## Indice dos conteúdos
-:file_folder: java
-<br>
+:file_folder: estruturasDeDadosEAlgoritmos <br>
+-> [Listas](estruturasDeDadosEAlgoritmos/listas.md)<br>
+-> [Fila](estruturasDeDadosEAlgoritmos/fila.md)<br>
+-> [Pilha](estruturasDeDadosEAlgoritmos/pilha.md)<br>
+-> [Arvores](estruturasDeDadosEAlgoritmos/Arvores.md)<br>
+-> [Heap](estruturasDeDadosEAlgoritmos/heap.md)<br>
+-> [Tabela Hash](estruturasDeDadosEAlgoritmos/tabelaDeDispersao.md)<br>
+-> [Bubblesort](estruturasDeDadosEAlgoritmos/algoritmosDeOrdenacao/bubbleSort.md)<br>
+-> [Insertionsort](estruturasDeDadosEAlgoritmos/algoritmosDeOrdenacao/insertonSort.md)<br>
+-> [Mergesort](estruturasDeDadosEAlgoritmos/algoritmosDeOrdenacao/mergeSort.md)<br>
+-> [Quicksort](estruturasDeDadosEAlgoritmos/algoritmosDeOrdenacao/quickSort.md)<br>
+
+:file_folder: java <br>
 -> [Explicando a JVM](java/explicandoJVM.md)<br>
 -> [Diferenças entre as versões do Java](java/diferencasEntreVersoesJava.md)<br>
 -> [Garbage Collector](java/garbageCollector.md)<br>
