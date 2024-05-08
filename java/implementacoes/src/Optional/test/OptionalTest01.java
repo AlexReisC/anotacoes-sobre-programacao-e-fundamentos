@@ -5,7 +5,7 @@ import java.util.Optional;
 
 public class OptionalTest01 {
     public static void main(String[] args) {
-        Optional<String> op1 = Optional.of("Aí tem iphone é riquinha");
+        Optional<String> op1 = Optional.of("Ai tem iphone é riquinha");
         Optional<String> op2 = Optional.ofNullable(null);
         Optional<String> op3 = Optional.empty();
         

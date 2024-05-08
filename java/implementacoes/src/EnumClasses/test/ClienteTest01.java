@@ -3,7 +3,6 @@ package EnumClasses.test;
 import EnumClasses.dominio.Cliente;
 import EnumClasses.dominio.TipoCliente;
 import EnumClasses.dominio.TipoPagamento;
-import EnumClasses.dominio.Cliente;
 
 
 public class ClienteTest01 {
