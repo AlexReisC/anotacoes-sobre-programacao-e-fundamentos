@@ -23,3 +23,6 @@ Para renomear um arquivo ou diretorio usamos o método *renameTo()*, o arquivo a
     File arquivo2 = new File("arquivo_renomeado");
     arquivo.renameTo(arquivo2);
 ```
+
+[Interface Path](test/PathTest02.java)<br>
+*Path* foi criada para substituir a classe *File* tendo mais desempenho e mais métodos interessantes para se trabalhar com arquivos. Path representa um caminho que é a hierarquia da sequência composta por diretorios e arquivo separados por um delimitador("\" ou "/"). A classe *Paths* herda dessa interface, ela implementa métodos, como por exemplo obter um path de um diretorio e retornar como string. Há ainda a classe *Files* (que não tem relação com *File*) que consiste de métodos estáticos para operar com arquivos e diretórios.
