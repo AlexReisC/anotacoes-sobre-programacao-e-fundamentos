@@ -8,7 +8,7 @@ O método *read()* lê um caracter de um arquivo e retorna um Integer que repres
 
 Em termos de desempenho as classes *BufferedWriter* e *BufferedReader* são mais indicadas.<br>
 [BufferedWriter](test/BufferedWriterTest01.java)<br>
-[BufferedWriter](test/BufferedReaderTest01.java)
+[BufferedReader](test/BufferedReaderTest01.java)
 
 [Criando diretorios](test/FileTest02.java)<br>
 Para criar diretorios utilizamos a classe *File*, ela tem o método *mkdir()* que retorna um booleano indicando se foi criado ou não. Para criar um arquivo dentro de um diretorio podemos usar o diretorio criado com a classe *File*, ou seja, usamos a referência para o diretorio no construtor do arquivo a ser criado. Exemplo:<br> 
