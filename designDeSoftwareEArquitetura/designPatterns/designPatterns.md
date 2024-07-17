@@ -39,9 +39,9 @@ Além disso, todos os padrões podem ser categorizados por seu propósito, ou in
 # Catálogo
 
 ## Padrões criacionais
-- Factory Method
-- [Builder](builder.md)
-- Singleton
+- [Factory Method](criacionais/factory.md)
+- [Builder](criacionais/builder.md)
+- [Singleton](criacionais/singleton.md)
 
 ## Padrões estruturais
 - 
