@@ -44,10 +44,11 @@ Além disso, todos os padrões podem ser categorizados por seu propósito, ou in
 - [Singleton](criacionais/singleton.md)
 
 ## Padrões estruturais
-- 
+- [Adapter](estruturais/adapter.md)
+- [Decorator](estruturais/decorator.md)
 
 ## Padrões comportamentais
-- 
+- [Command](comportamentais/command.md)
 
 # Referência
 - [O que é um padrão de projeto?](https://refactoring.guru/pt-br/design-patterns/what-is-pattern)
