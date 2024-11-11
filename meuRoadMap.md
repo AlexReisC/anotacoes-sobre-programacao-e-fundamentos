@@ -1,12 +1,12 @@
 # Meu roadmap 2024
 ## Java
 - [x] Generics
-- [ ] Streams
-- [ ] Serialização
-- [ ] Threads
-- [ ] Websockets
+- [x] Streams
+- [x] Serialização
+- [x] Threads
+- [ ] ~~Websockets~~
 - [ ] SpringBoot
 ## Internet
-- [ ] HTTP
-- [ ] API
+- [x] HTTP
+- [x] API
   - [ ] Rest
