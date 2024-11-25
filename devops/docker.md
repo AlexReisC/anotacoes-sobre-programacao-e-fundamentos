@@ -34,21 +34,23 @@ Dados importantes não podem estar dentro do container.
 Alteração em coisas existentes do container, na verdade são cópias na camada read-write.
 
 ### O que são namespaces e cgroup
-Namespace servem para limitar ou isolar recursos de uma máquina. Cgroup servem para isolar cpu e memória.
+Namespace servem para limitar ou isolar recursos de uma máquina. Cgroup servem para isolar cpu e memória. A tecnologia Docker os utilliza para segregar processos, assim eles podem ser executados de maneira independente.
 
 ## Instalando Docker no Linux
 
-Instalar
+Instalar:
 ```
 $ sudo apt install docker.io
 ```
 
-Criar um grupo docker e adicionar o seu usuário para usar comandos Docker sem `sudo`
+Criar um grupo docker e adicionar o seu usuário para usar comandos Docker sem `sudo`:
 ```
 $ sudo usermod -aG docker seu_usuario
 ```
 
 ## Primeiros passos
+
+Rodar um container:
 ```
 $ docker run -d -p 80:80 docker/getting-started
 ```
@@ -59,36 +61,37 @@ $ docker run -d -p 80:80 docker/getting-started
 * docker/getting-started -> nome completo da imagem
 > **Neste exemplo estamos carregando a imagem de getting started do docker**
 
-Ver containers em execução
+Ver containers em execução:
 ```
 $ docker container ls
 ```
 
-Ver todos os containers já criados
+Ver todos os containers já criados:
 ```
 $ docker container ls -a
 ```
 
-Ver os logs do container
+Ver os logs do container:
 ```
 $ docker logs -f <id do container>
 ```
 
-Remover container
+Remover container:
 ```
 $ docker rm <id do container>
 ```
 
-Parar executação do container
+Parar executação do container:
 ```
 $ docker stop <id do container>
 ```
 
-Iniciar container
+Iniciar container:
 ```
 $ docker start <id do container>
 ```
 
+Executar um comando dentro do container:
 ```
 $ docker container exec -it <id do container> bash
 ```
@@ -96,47 +99,49 @@ $ docker container exec -it <id do container> bash
 * -it -> indica que quer um terminal
 * bash( ou sh) -> o que será executado (precisa existir dentro do container)
 
-> CRTL+D para sair do container
+> CRTL+D (ou CRTL+C) para sair do container
 
 ## Imagem de container
 
 ### Dockerfile
-Arquivo com instruções para o que o container deve fazer
+Arquivo com instruções para o que o container deve fazer. Exemplo de um Dockerfile e suas instruções:
 
+```markdown
 `FROM debian`(em que a imagem será baseada)
-`RUN apt-get update && apt-get install ngix` (execute alguma coisa na criação da imagem)
+`RUN apt-get update && apt-get install ...` (execute alguma coisa na criação da imagem)
 `WORKDIR /app` (diretório padrão ao iniciar o container)
 `COPY /app/src /app` (copia aplicacao da sua máquina para o container)
 `EXPOSED 80` (se é webserver vai ter a porta http exposta)
 `CMD projeto --start` (comando para executar algo no container)
+```
 
 ### Rodando um app
-Criado arquivo `Dockerfile` é preciso fazer o build:
+Criado o arquivo `Dockerfile` é preciso fazer o build:
 ```
 $ docker build -t <nome-do-app> <caminho/do/diretorio/do/Dockerfile>
 ```
 > Caso o `Dockerfile` esteja no mesmo diretorio do build apenas usa-se um ponto `.`
 
-Mostra as imagens
+Mostrar as imagens:
 ```
 $ docker images
 ```
 
-Ver detalhas da imagem (a versão padrão é `latest`)
+Ver detalhas da imagem (a versão padrão é `latest`):
 ```
 $ docker image inspect nome-do-container:versao
 ```
 
 > **Dados escritos dentro do container são perdidos quando o container é apagado.**
 
-Editar a versão (tag) de um container
+Editar a versão (tag) de um container:
 ```
 $ docker image tag nome-container:tag nome-container:nova-tag
 ```
 
 ### Atualizar um app
 
-Build da versão atualizada da imagem
+Fazer o build da versão atualizada da imagem:
 ```
 $ docker build -t nome-do-container caminho/do/diretorio/do/Dockerfile
 ```
@@ -146,19 +151,19 @@ Pare e remova o container antigo, pode fazer isso rapidamente com:
 $ docker rm --force id-do-container
 ```
 
-Inicie o novo container
+Inicie o novo container:
 ```
 $ docker run -dp portaDocker:portaHost nome-do-container
 ```
 
 ### Compartilhando imagem no Docker Hub
 
-Atualize o nome da imagem adicionando seu usuario a ele
+Atualize o nome da imagem adicionando seu usuario a ele:
 ```
 docker image tag nome-da-imagem:versao seu-usuario/nome-da-imagem:versao
 ```
 
-Crie conta no Docker Hub e faça login no terminal
+Crie conta no Docker Hub e faça login no terminal:
 ```
 $ docker login -u seu-usuario
 ```
@@ -180,17 +185,17 @@ O Docker gerencia totalmente o volume, incluindo a localização do armazenament
 
 ### Criando um volume
 
-Criar um volume
+Criar um volume:
 ```
 $ docker volume create nome-volume
 ```
 
-Pare e remova o container que está executando sem o volume
+Pare e remova o container que está executando sem o volume:
 ```
 $ docker rm -f id-container
 ```
 
-Iniciar o container
+Iniciar o container:
 ```
 $ docker run -dp 127.0.0.1:3000:3000 --mount type=volume,src=nome-volume,target=/etc/todos nome-do-container
 ```
@@ -199,11 +204,11 @@ $ docker run -dp 127.0.0.1:3000:3000 --mount type=volume,src=nome-volume,target=
 * src > nome-do-volume
 * target > onde o volume será montado
 
-Para inspecionar o volume
+Para inspecionar o volume:
 ```
 $ docker inspect volume nome-volume
 ```
-* No output, `Mountpoint` é a localização dos dados no disco
+- **No output, `Mountpoint` é a localização dos dados no disco**
 
 ## Container Network
 Containers, por padrão, executam isolados e não sabem nada sobre outros processos ou containers na mesma máquina. Colocando containers na mesma rede (network) eles podem conversar um com o outro.
@@ -216,28 +221,28 @@ A seguir vamos criar uma network e conectar um container MySQL a ela.
 
 ### Iniciar um container MySQL
 
-Criar uma network
+Criar uma network:
 ```
 $ docker network create nome-da-network
 ```
 
-Iniciar um container MySQL e conectar à network
+Iniciar um container MySQL e conectar à network:
 ```
 docker run -d --network nome-da-network --network-alias mysql -v mysql-todo-db:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=secret -e MYSQL_DATABASE=todos mysql:8.0
 ```
 
-Verificar se o banco de dados está rodando
+Verificar se o banco de dados está rodando:
 ```
 $ docker exec -it <mysql-container-id> mysql -u root -p
 ```
-A senha para entrar é `secret`
+A senha para entrar é `secret`.
 
-Para ver o banco de dados
+Para ver o banco de dados:
 ```
 mysql> SHOW DATABASES;
 ```
 
-Sair do MySQL `mysql> exit`
+Sair do MySQL `mysql> exit`.
 
 ### Conectar ao MySQL
 
@@ -253,7 +258,8 @@ $ docker run -dp 127.0.0.1:3000:3000 \
   node:18-alpine \
   sh -c "yarn install && yarn run dev"
 ```
+Assim neste exemplo temos dois containers dentro de uma mesma rede e contectados entre si.
 
-# Referências
+## Referências
 [Livro: Descomplicando Docker](https://livro.descomplicandodocker.com.br/)
 [Primeiros passos no Docker](https://dev.to/clintonrocha98/primeiros-passos-no-docker-m0k)
