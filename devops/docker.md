@@ -10,7 +10,9 @@ Containers são similares à máquinas virtuias, porém são mais leves e mais i
 Um container criado no seu ambiente, irá rodar em qualquer outro (Linux, MacOS, Windows), que tenha o Docker instalado.
 
 ## O que é o Docker
-Principal ferramenta para utilizar containers. É uma das principais fabricantes que fornecem opções para executar containers.
+Emm 2013, a empresa dotCloud especializada em PaaS (*Plataform-as-a-Service*) decidiu tornar open source o core da sua plataforma, assim surgiu o Docker. Com o rápido crescimento do projeto, a dotCloud decidiu se chamar Docker e a versão 1.0 foi lançada após 15 meses da sua versão 0.1.
+
+Assim Docker é uma tecnologia de conteinerização, a principal ferramenta para implantar aplicativos dentro de containers virtuais.
 
 ### Copy-On-Writer
 Significa que um novo recuros, seja um bloco no disco ou uma área em memória, só é alocado quando for modificado.
