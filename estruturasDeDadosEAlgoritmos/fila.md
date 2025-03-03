@@ -3,9 +3,9 @@
 
 ## Alocação Sequencial
 São necessários dois ponteiros: início de fila (*f*) e retaguarda (*r*). Para a adição de um elemento, move-se o ponteiro *r*; para a retirada, move-se o ponteiro *f*. A situação de fila vazia é representada por *f* = *r* = 0.
-<br>
+
 À medida que os ponteiros são incrementados na memória disponível, a fila “se move”, o que pode dar origem à falsa impressão de memória esgotada. Para eliminar esse problema, consideram-se os M nós alocados como se estivessem em círculo, onde F[1] segue F[M]. 
-<br>
+
 *A inicialização de *f* e *r* é *f = r = 0*.
 
 **Inserção na fila**

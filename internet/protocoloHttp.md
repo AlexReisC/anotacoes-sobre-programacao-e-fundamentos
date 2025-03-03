@@ -61,7 +61,8 @@ Uma mensagem de requisição é enviada de um cliente para um servidor para soli
 ### Linha de Solicitação (Request Line)
 Na linha de solicitação, presente em uma solicitação HTTP, são especificados três elementos principais: o método HTTP, a URI e a versão do protocolo HTTP.
 
-Exemplo: `GET /exemplo/recurso HTTP/1.1` <br>
+Exemplo: `GET /exemplo/recurso HTTP/1.1`
+
 Neste exemplo "GET" é o método, "/exemplo/recurso" é a URI e "HTTP/1.1"
 
 ### Linha de status (Status Line)

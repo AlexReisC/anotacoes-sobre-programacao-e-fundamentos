@@ -6,6 +6,11 @@
 - [x] Threads
 - [ ] ~~Websockets~~
 - [ ] SpringBoot
+  - [ ] Getting started
+  - [ ] Microsserrvicos
+  - [ ] Primeira API
+  - [ ] JPA
+  - [ ] Primeiro CRUD
 ## Internet
 - [x] HTTP
 - [x] API
